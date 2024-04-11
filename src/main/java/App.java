@@ -5,7 +5,7 @@ public class App {
     // de son type (normal ou special) et si il prend un café ou pas (yes ou no).
     // les prix sont fixes pour chaque type de chose mais des réductions peuvent s'appliquer
     // si cela rentre dans une formule!
-    public int Compute(Meal meal, Beverage beverage, Dessert dessert, String coffee) {
+    public int Compute(Meal meal, Beverage beverage, Dessert dessert, boolean coffee) {
 
         int total = 0;
 
@@ -93,11 +93,11 @@ public class App {
 
             }
         }
-        if (meal.isPlate() && beverage.isMedium() && dessert.isNormal() && coffee.equals("yes")) {
+        if (meal.isPlate() && beverage.isMedium() && dessert.isNormal() && coffee) {
             System.out.print(" avec café offert!");
         } else {
 
-            if (!coffee.equals("yes")) {
+            if (!coffee) {
                 total += 1;
             }
         }
