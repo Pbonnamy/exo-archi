@@ -26,4 +26,15 @@ public class Beverage {
     public boolean isLarge() {
         return size.equals(BeverageSize.LARGE);
     }
+
+    public int getPrice() {
+        if (isSmall()) {
+            return 2;
+        } else if (isMedium()) {
+            return 3;
+        } else if (isLarge()) {
+            return 4;
+        }
+        return 0;
+    }
 }

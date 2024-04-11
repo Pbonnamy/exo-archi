@@ -22,4 +22,13 @@ public class Meal {
     public boolean isSandwich() {
         return type.equals(MealType.SANDWICH);
     }
+
+    public int getPrice() {
+        if (isPlate()) {
+            return 15;
+        } else if (isSandwich()) {
+            return 10;
+        }
+        return 0;
+    }
 }

@@ -9,90 +9,10 @@ public class App {
 
         int total = 0;
 
-        if (meal.isPlate()) {
-            total += 15;
+        total += meal.getPrice();
+        total += beverage.getPrice();
+        total += dessert.getPrice(beverage);
 
-            if (beverage.isSmall()) {
-
-                total += 2;
-
-                if (dessert.isNormal()) {
-
-                    total += 2;
-                } else {
-
-                    total += 4;
-                }
-
-            } else if (beverage.isMedium()) {
-
-                total += 3;
-                if (dessert.isNormal()) {
-
-                    System.out.print("Prix Formule Standard appliquée ");
-
-                    total = 18;
-                } else {
-                    total += 4;
-                }
-
-            } else if (beverage.isLarge()) {
-
-                total += 4;
-                if (dessert.isNormal()) {
-
-                    total += 2;
-                } else {
-
-                    System.out.print("Prix Formule Max appliquée ");
-
-                    total = 21;
-                }
-
-            }
-        } else {
-            total += 10;
-            if (beverage.isSmall()) {
-
-                total += 2;
-
-                if (dessert.isNormal()) {
-
-                    total += 2;
-                } else {
-
-                    total += 4;
-                }
-
-            } else if (beverage.isMedium()) {
-                total += 3;
-
-                if (dessert.isNormal()) {
-
-                    System.out.print("Prix Formule Standard appliquée ");
-
-                    total = 13;
-
-                } else {
-
-                    total += 4;
-                }
-
-            } else if (beverage.isLarge()) {
-                total += 4;
-
-                if (dessert.isNormal()) {
-
-                    total += 2;
-                } else {
-
-                    System.out.print("Prix Formule Max appliquée ");
-
-                    total = 16;
-                }
-
-            }
-        }
         if (meal.isPlate() && beverage.isMedium() && dessert.isNormal() && coffee) {
             System.out.print(" avec café offert!");
         } else {
@@ -103,6 +23,4 @@ public class App {
         }
         return total;
     }
-
-
 }
