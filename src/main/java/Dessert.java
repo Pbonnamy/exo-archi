@@ -12,30 +12,22 @@ public class Dessert {
     }
 
     public int getPrice(Beverage beverage) {
-        if (beverage.isSmall()) {
-            if (isNormal()) {
-                return 2;
-            } else {
-                return 4;
-            }
-        } else if (beverage.isMedium()) {
-            if (isNormal()) {
+        if (isNormal()) {
+            if (beverage.isMedium()) {
                 System.out.print("Prix Formule Standard appliquée ");
 
                 return 0;
-            } else {
-                return 4;
             }
-        } else if (beverage.isLarge()) {
-            if (isNormal()) {
-                return 2;
-            } else {
+
+            return 2;
+        } else {
+            if (beverage.isLarge()) {
                 System.out.print("Prix Formule Max appliquée ");
 
                 return 0;
             }
-        }
 
-        return 0;
+            return 4;
+        }
     }
 }
